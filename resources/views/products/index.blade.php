@@ -13,6 +13,7 @@
         <p>
             {{$product->description}}
         </p>
+        <a href="/urunler/sil/{{$product->id}}">Sil</a>
     @endforeach
 </body>
 </html>
