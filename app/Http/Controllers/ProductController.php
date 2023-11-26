@@ -30,4 +30,23 @@ class ProductController extends Controller
 
         return redirect()->back();
     }
+
+    public function edit($id) {
+        $product = Product::find($id);
+
+        return view('products.edit', compact('product'));
+    }
+
+    public function update(Request $request, $id) {
+        $product = Product::find($id);
+        $product->name = $request->get('name');
+        $product->description = $request->get('description');
+        $product->price = $request->get('price');
+        $product->qty = $request->get('qty');
+        $product->is_published = $request->boolean('is_published');
+        $product->save();
+
+        return redirect()->back();
+
+    }
 }

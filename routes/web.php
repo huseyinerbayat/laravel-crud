@@ -21,3 +21,5 @@ Route::get('/', function () {
 Route::get('/urunler', [ProductController::class, 'index']);
 Route::get('/urunler/ekle', [ProductController::class, 'create']);
 Route::post('/urunler/ekle', [ProductController::class, 'store']);
+Route::get('/urunler/duzenle/{id}', [ProductController::class, 'edit']);
+Route::post('/urunler/duzenle/{id}', [ProductController::class, 'update']);
